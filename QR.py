@@ -91,7 +91,8 @@ def mostrar_factorizacion(A, Q, R):
     
     print("\nPor lo tanto, A = QR.")
 
- # Matriz de ejemplo (2x2)
+
+""" # Matriz de ejemplo (2x2)
 A = [
         [1, 2],
         [3, 4],
@@ -101,4 +102,4 @@ A = [
  # msg es para mostrar si A es LI o no
 Q, R, msg = factorizacion_qr(A)
 
-print("\nMensaje:", msg)  
+print("\nMensaje:", msg)  """

@@ -1,3 +1,5 @@
+import QR
+import Solucion as Sol
 
 n = 0
 m = 0
@@ -5,7 +7,7 @@ m = 0
 # Función para comprobar que los valores ingresados son números reales
 def intComprobacion(digit):
     try:
-        float(digit)
+        int(digit)
         return digit
     except ValueError:
         print("\033[31mEl valor ingresado no es un número válido\n\033[0m")
@@ -60,3 +62,22 @@ def matrixComprobacion(Matrix, Vector, a):
         return False
     else:
         return True
+    
+
+#PROGRAMA EN EJECUCIÓN
+n = None
+m = None
+while n == None or m == None:
+    n = input("Por favor ingrese el número de filas de la matriz: ")
+    m = input("Por favor ingrese el número de columnas de la matriz: ")
+    if intComprobacion(n) != None:
+        n = int(n)
+    if intComprobacion(m) != None:
+        m = int(m)
+Matrix = makeMatrix(n, m)
+Vector = makeMatrixB(n)
+print("Se procese a ejecutar factorización QR...")
+Q, R, msg = QR.factorizacion_qr(Matrix)
+print("\nMensaje:", msg) 
+if Q != None:
+    Sol.SolucionQR(Q, R, Vector)
